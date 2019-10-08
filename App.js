@@ -11,8 +11,8 @@ export default class App extends React.Component {
 
     this.state = {
       formValue : {
-        user:"kjjhh",
-        password:"jjh",
+        user:"",
+        password:"",
       }
     };
   }
