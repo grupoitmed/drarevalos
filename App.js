@@ -50,7 +50,7 @@ export default class App extends React.Component {
             value={formValue}
             onChange={v => this.onChange(v)}
           />
-          <Button buttonStyle={styles.button} title="Login" onPress={this.sendFrom.bind(this)} />
+          <Button buttonStyle={styles.button} title="Entrar" onPress={this.sendFrom.bind(this)} />
       </View>
     );
   }
