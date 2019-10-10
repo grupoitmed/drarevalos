@@ -4,7 +4,7 @@ import { Button,Image } from 'react-native-elements';
 import t from "tcomb-form-native";
 const Form = t.form.Form;
 import { LoginStruct,LoginOptions } from "./app/screen/Login";
-
+import Navegacion from "./app/navigation/App_navegacion";
 export default class App extends React.Component {
   constructor (){
     super();
@@ -13,7 +13,8 @@ export default class App extends React.Component {
       formValue : {
         user:"",
         password:"",
-      }
+      },
+      login:false
     };
   }
 
@@ -27,32 +28,42 @@ export default class App extends React.Component {
 
   
   sendFrom = () => {
-    
     console.log(this.state);
+    this.setState({
+      login:true
+    });
   } 
 
   render(){
-    const { formValue }  = this.state;
-    const logo = require('./assets/images/logo.png');
-    return ( 
-      
-      <View style={styles.container}>
-          <View style={styles.containerImage}>
-          <Image
-              source={logo}
-              style={styles.logo}
-            />
+    if(this.state.login){
+      return ( 
+        <View style={styles.container}>
+            <Navegacion />
         </View>
-          <Form 
-            ref="formValue"
-            type={LoginStruct}
-            options={LoginOptions}
-            value={formValue}
-            onChange={v => this.onChange(v)}
-          />
-          <Button buttonStyle={styles.button} title="Entrar" onPress={this.sendFrom.bind(this)} />
-      </View>
-    );
+      );
+    }else{
+        const { formValue }  = this.state;
+        const logo = require('./assets/images/logo.png');
+        return ( 
+          
+          <View style={styles.container}>
+              <View style={styles.containerImage}>
+              <Image
+                  source={logo}
+                  style={styles.logo}
+                />
+            </View>
+              <Form 
+                ref="formValue"
+                type={LoginStruct}
+                options={LoginOptions}
+                value={formValue}
+                onChange={v => this.onChange(v)}
+              />
+              <Button buttonStyle={styles.button} title="Entrar" onPress={this.sendFrom.bind(this)} />
+          </View>
+        );
+    }
   }
 }
 

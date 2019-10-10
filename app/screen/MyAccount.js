@@ -11,9 +11,6 @@ export default class MyAccount extends React.Component  {
     }
 }
 
-LinksScreen.navigationOptions = {
-  title: 'MyAccount',
-};
 
 const styles = StyleSheet.create({
   container: {

@@ -11,9 +11,6 @@ export default class Clinica extends React.Component  {
     }
 }
 
-LinksScreen.navigationOptions = {
-  title: 'Clinica',
-};
 
 const styles = StyleSheet.create({
   container: {

@@ -11,9 +11,7 @@ export default class Contact extends React.Component  {
     }
 }
 
-LinksScreen.navigationOptions = {
-  title: 'Contact',
-};
+
 
 const styles = StyleSheet.create({
   container: {
