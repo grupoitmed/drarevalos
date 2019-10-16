@@ -6,9 +6,8 @@ const Form = t.form.Form;
 import { LoginStruct,LoginOptions } from "./app/screen/Login";
 import Navegacion from "./app/navigation/App_navegacion";
 export default class App extends React.Component {
-  constructor (){
-    super();
-
+  constructor (props){
+    super(props);
     this.state = {
       formValue : {
         user:"",
